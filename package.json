@@ -1,0 +1,23 @@
+{
+  "name": "river-plate-anglers",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:api": "yarn workspace @river-plate/api dev",
+    "dev:web": "yarn workspace @river-plate/web dev",
+    "dev:admin": "yarn workspace @river-plate/admin dev",
+    "build:api": "yarn workspace @river-plate/api build",
+    "build:web": "yarn workspace @river-plate/web build",
+    "build:admin": "yarn workspace @river-plate/admin build",
+    "start:api": "yarn workspace @river-plate/api start",
+    "start:web": "yarn workspace @river-plate/web start",
+    "start:admin": "yarn workspace @river-plate/admin start"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0"
+  }
+} 

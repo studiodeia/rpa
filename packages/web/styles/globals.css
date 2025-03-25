@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-50: #edf7ff;
+  --primary-100: #d5eaff;
+  --primary-200: #b0d4ff;
+  --primary-300: #7db6ff;
+  --primary-400: #428eff;
+  --primary-500: #1a6dff;
+  --primary-600: #0054ff;
+  --primary-700: #0048d8;
+  --primary-800: #003bb0;
+  --primary-900: #00348c;
+  --primary-950: #001e52;
+  
+  /* Cores secundárias */
+  --color-secondary-50: #E6F9F4;
+  --color-secondary-100: #CCF3E8;
+  --color-secondary-200: #99E7D2;
+  --color-secondary-300: #66DBBB;
+  --color-secondary-400: #33CFA5;
+  --color-secondary-500: #00C38E;
+  --color-secondary-600: #009C72;
+  --color-secondary-700: #007555;
+  --color-secondary-800: #004E39;
+  --color-secondary-900: #00271C;
+  
+  /* Cinzas */
+  --color-gray-50: #F9FAFB;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D1D5DB;
+  --color-gray-400: #9CA3AF;
+  --color-gray-500: #6B7280;
+  --color-gray-600: #4B5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #111827;
+  
+  /* Cores de feedback */
+  --color-success-light: #D1FAE5;
+  --color-success-main: #10B981;
+  --color-success-dark: #047857;
+  
+  --color-warning-light: #FEF3C7;
+  --color-warning-main: #F59E0B;
+  --color-warning-dark: #B45309;
+  
+  --color-error-light: #FEE2E2;
+  --color-error-main: #EF4444;
+  --color-error-dark: #B91C1C;
+  
+  --color-info-light: #DBEAFE;
+  --color-info-main: #3B82F6;
+  --color-info-dark: #1D4ED8;
+}
+
+@layer base {
+  html {
+    @apply text-gray-900;
+  }
+  
+  body {
+    @apply bg-gray-50;
+  }
+
+  /* Melhorar a altura do aplicativo para telas móveis */
+  html, body {
+    @apply h-full;
+  }
+
+  #__next {
+    @apply flex flex-col min-h-screen;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+
+  /* Heading styles */
+  h1 {
+    @apply text-3xl font-bold mb-4;
+  }
+
+  h2 {
+    @apply text-2xl font-bold mb-3;
+  }
+
+  h3 {
+    @apply text-xl font-bold mb-2;
+  }
+
+  /* Link styles */
+  a {
+    @apply text-primary-600 hover:text-primary-800 transition-colors;
+  }
+
+  /* Input focus outline */
+  input:focus, select:focus, textarea:focus {
+    @apply outline-none ring-2 ring-primary-500 ring-opacity-50;
+  }
+}
+
+@layer components {
+  /* Button base style */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-gray-700 border-gray-300 hover:bg-gray-50;
+  }
+
+  .btn-success {
+    @apply btn bg-green-600 text-white hover:bg-green-700;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700;
+  }
+
+  .btn-warning {
+    @apply btn bg-yellow-500 text-white hover:bg-yellow-600;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1 text-sm;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-lg;
+  }
+
+  /* Form controls */
+  .form-input {
+    @apply w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring focus:ring-primary-500 focus:ring-opacity-50;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  .form-help {
+    @apply mt-1 text-sm text-gray-500;
+  }
+
+  .form-error {
+    @apply mt-1 text-sm text-red-600;
+  }
+
+  /* Card */
+  .card {
+    @apply bg-white rounded-lg shadow overflow-hidden;
+  }
+
+  .card-header {
+    @apply px-6 py-4 border-b border-gray-200;
+  }
+
+  .card-body {
+    @apply px-6 py-4;
+  }
+
+  .card-footer {
+    @apply px-6 py-4 bg-gray-50 border-t border-gray-200;
+  }
+
+  /* Container with responsive padding */
+  .container-responsive {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Animações e transições */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Utilitários adicionais */
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+} 
