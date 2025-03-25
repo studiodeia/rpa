@@ -106,15 +106,17 @@ export const NewReservationForm: React.FC = () => {
                 htmlFor="operation_id"
               >
                 <Select
-                  id="operation_id"
-                  value={operationId}
-                  onChange={(e) => setOperationId(e.target.value)}
-                >
-                  <option value="">Selecione uma operação</option>
-                  {availableOperations.map(op => (
-                    <option key={op.id} value={op.id}>{op.name}</option>
-                  ))}
-                </Select>
+  id="operation_id"
+  value={operationId}
+  onChange={(e) => setOperationId(e.target.value)}
+  options={[
+    { value: '', label: 'Selecione uma operação' },
+    ...availableOperations.map(op => ({ 
+      value: op.id, 
+      label: op.name 
+    }))
+  ]}
+/>
               </FormField>
               
               <NavigationButtons />
