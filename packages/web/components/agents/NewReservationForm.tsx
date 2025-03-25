@@ -77,7 +77,7 @@ export const NewReservationForm: React.FC = () => {
         <Button
           variant="primary"
           onClick={handleSubmit}
-          isLoading={loading}
+          loading={loading}
           className="ml-auto"
         >
           Finalizar Reserva
